@@ -4,15 +4,15 @@
 
 
 ## Technical Requirements
- * **Backend**
-●​ Framework: Python 3.12, Django, Django REST Framework​
-●​ Database: PostgreSQL​
-●​ Scheduler: Celery
-●​ News API: Integrated with NewsAPI.org free plan 
+ * ***Backend***
+ * ​ Framework: Python 3.12, Django, Django REST Framework​
+ * ​ Database: PostgreSQL​ 
+ * ​ Scheduler: Celery
+ * ​ News API: Integrated with NewsAPI.org free plan 
 
- * **​Frontend**
-●​ Framework: Vue 3​
-●​ Styling: Tailwind CSS
+ * ***​Frontend***
+  * ​ Framework: Vue 3​
+  * ​ Styling: Tailwind CSS
 ---
 
 <div align="center">
