@@ -62,6 +62,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+AUTH_USER_MODEL = "authio.User"
+
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
