@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
     "django_vite_plugin",
+    "drf_spectacular",
 ]
 
 PROJECT_APPS = [
@@ -154,6 +155,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "apps.common.custom_paginator.CustomPagination",
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
@@ -174,6 +176,12 @@ DJANGO_VITE_PLUGIN = {
     "BUILD_DIR": "frontend/build",
 }
 
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Personalized News Aggregator API",
+    "DESCRIPTION": "Personalized News Aggregator description",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
 
 # Celery settings with redis as broker
 CELERY_BACKEND = os.getenv("CELERY_BACKEND", "redis://127.0.0.1:6379/3")
