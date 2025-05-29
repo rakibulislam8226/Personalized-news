@@ -2,6 +2,18 @@
   <h2>Personalized News Aggregator</h2>
 </div>
 
+### Project Features:
+* Implemented the project using django vite plugin to execute both frontend and backend within a single server.
+* Frontend and backend within one server. So no need different server for frontend and backend.
+* Register and securely log in.​
+* Customize news settings: country, sources, and keywords (using user profile).
+* Browse, search, and filter their news feed.
+* Access original articles via source links.​
+* Background scheduler integration using celery for periodic news updates.​
+* Fetch the latest articles from NewsAPI.org based on all users’ preferences.​
+* Store matching articles in the database linked to each user.
+* Deliver a paginated news feed tailored to the authenticated user’s preferences.
+
 
 ## Technical Requirements
  * ***Backend***
@@ -85,5 +97,11 @@ npm install
 npm run dev
   ```
 ---
-
-### Project Structure
+### To execute celery worker and beat for periodic news updates based on users
+```
+celery -A config worker --loglevel=info
+```
+```
+celery -A config beat --loglevel=info
+```
+---
