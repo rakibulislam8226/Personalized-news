@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.generic.base import TemplateView
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -18,7 +19,7 @@ urlpatterns = [
     # admin
     path("admin/", admin.site.urls),
     # rest_framework
-    path('api-auth/', include('rest_framework.urls')),
+    path("api-auth/", include("rest_framework.urls")),
     # drf-spectacular
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     # Optional UI:
@@ -40,3 +41,9 @@ urlpatterns = [
     path("api/v1/", include("apps.articlesio.rest.urls")),
     path("api/v1/", include("apps.authio.rest.urls")),
 ]
+
+urlpatterns += (
+    re_path(
+        r"^(?!api|media|static/).*", TemplateView.as_view(template_name="app.html")
+    ),
+)
