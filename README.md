@@ -39,6 +39,7 @@ To start using Personalized News Aggregator:
  ```shell
 git clone git@github.com:rakibulislam8226/Personalized-news.git
   ```
+* cd Personalized-news/
 
 ---
 **Create virtual environment based on your operating system**
