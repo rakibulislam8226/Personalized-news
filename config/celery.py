@@ -16,6 +16,6 @@ app.conf.broker_connection_retry_on_startup = True
 app.conf.beat_schedule = {
     "fetch-news-for-all-users": {
         "task": "apps.articlesio.tasks.fetch_news_for_all_users",
-        "schedule": crontab(minute="*/1"),
+        "schedule": crontab(minute="*/10"),
     },
 }
