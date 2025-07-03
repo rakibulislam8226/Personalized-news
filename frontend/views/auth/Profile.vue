@@ -1,6 +1,7 @@
 <template>
   <div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md">
     <h1 class="text-2xl font-bold mb-6 text-green-600 text-center">Profile</h1>
+      <BtnBack @click="$router.go(-1)" abc="efh" />
 
     <div v-if="profile">
       <form @submit.prevent="updateProfile" class="space-y-6">
@@ -176,6 +177,8 @@ import { ref, onMounted, computed, inject } from "vue";
 import { useRouter } from "vue-router";
 import axios from "@/plugins/axiosConfig.js";
 import { countryChoices } from "@/constants/countryChoices.js";
+
+import BtnBack from "@/components/BtnBack.vue";
 
 const profile = ref(null);
 const searchCountry = ref("");

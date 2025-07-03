@@ -30,8 +30,6 @@ export const useAuthStore = defineStore("auth", {
       this.refresh = res.data.refresh;
       localStorage.setItem("access", this.access);
       localStorage.setItem("refresh", this.refresh);
-
-      axios.defaults.headers.common["Authorization"] = `Bearer ${this.access}`;
     },
     async logout() {
       try {
@@ -54,7 +52,6 @@ export const useAuthStore = defineStore("auth", {
       this.refresh = null;
       localStorage.removeItem("access");
       localStorage.removeItem("refresh");
-      delete axios.defaults.headers.common["Authorization"];
     },
   },
 });

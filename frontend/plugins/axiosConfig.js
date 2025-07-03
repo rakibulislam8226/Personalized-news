@@ -11,6 +11,11 @@ instance.defaults.headers.common["X-CSRFToken"] = csrftoken;
 // Request Interceptor
 instance.interceptors.request.use(
   function (config) {
+    // Add Authorization header if access token is available
+    const access = localStorage.getItem("access");
+    if (access) {
+      config.headers["Authorization"] = `Bearer ${access}`;
+    }
     return config;
   },
   function (error) {
